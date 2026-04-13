@@ -1,0 +1,58 @@
+#SQL Queries ::
+#-----Fraud Detection in Transaction-----#
+
+1.Total Transactions:
+SELECT COUNT(*) AS Total_Transactions
+FROM transactions;
+
+2. Fraud vs Normal Count
+SELECT FraudFlag, COUNT(*) AS Count
+FROM transactions
+GROUP BY FraudFlag;
+
+3. High-Risk Transaction
+SELECT *
+FROM transactions
+WHERE TransactionAmount > 5000 AND Hour < 6;
+
+4. Top High-Value Transactions
+SELECT *
+FROM transactions
+ORDER BY TransactionAmount DESC
+LIMIT 10;
+
+5. High Login Attempt Fraud
+SELECT *
+FROM transactions
+WHERE LoginAttempts > 3 AND FraudFlag = 1;
+
+6. Average Amount for High-Risk Transactions
+SELECT AVG(TransactionAmount) AS Avg_High_Risk_Amount
+FROM transactions
+WHERE TransactionAmount > 5000 AND Hour < 6;
+
+7. Top 5 Locations with Highest Fraud
+SELECT Location, COUNT(*) AS Fraud_Count
+FROM transactions
+WHERE FraudFlag = 1
+GROUP BY Location
+ORDER BY Fraud_Count DESC
+LIMIT 5;
+
+8. Day-wise Fraud Count
+SELECT DATE(TransactionDate) AS Date, COUNT(*) AS Fraud_Count
+FROM transactions
+WHERE FraudFlag = 1
+GROUP BY DATE(TransactionDate)
+ORDER BY Date;
+
+9.Accounts with More Transactions
+SELECT AccountID, COUNT(*) AS Transaction_Count
+FROM transactions
+GROUP BY AccountID
+HAVING COUNT(*) > 5;
+
+10.Daily Transaction Count
+SELECT DATE(TransactionDate) AS Date, COUNT(*) AS Total
+FROM transactions
+GROUP BY DATE(TransactionDate);
