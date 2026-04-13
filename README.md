@@ -1,4 +1,5 @@
 📊 Fraud Detection in Transactions
+
 🔍 Project Overview
 
 This project focuses on analyzing transaction data to detect fraudulent activities using data analysis and machine learning techniques. With the increasing use of digital payments, identifying fraud has become critical for ensuring financial security.
@@ -9,6 +10,7 @@ An interactive dashboard is also developed using Power BI Desktop, and a web app
 
 
 🎯 Objectives
+
 Analyze transaction data and identify fraud patterns
 Perform data preprocessing and feature engineering
 Apply machine learning for fraud detection
@@ -17,6 +19,7 @@ Visualize insights through dashboard and web application
 
 
 🛠️ Technologies Used
+
 Python (Data Analysis & Machine Learning)
 Pandas, NumPy (Data Processing)
 Scikit-learn (Machine Learning Model)
@@ -26,6 +29,7 @@ Power BI (Dashboard Visualization)
 Streamlit (Web Application)
 
 📈 Results
+
 Achieved high accuracy in fraud detection
 High recall ensures most fraud cases are detected
 Dashboard provides clear visualization of fraud patterns
